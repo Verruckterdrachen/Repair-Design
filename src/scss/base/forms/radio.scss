@@ -1,0 +1,37 @@
+.radio {
+	--color: #000;
+	--colorDisabled: #999;
+	cursor: pointer;
+	color: var(--color);
+	&.radio--disabled {
+		cursor: not-allowed;
+		--color: var(--colorDisabled);
+	}
+}
+.radio__input {
+	cursor: pointer;
+	position: relative;
+	appearance: none;
+	width: em(12);
+	height: em(12);
+	margin-right: em(6);
+	color: inherit;
+	border: em(1.8) solid currentColor;
+	border-radius: 50%;
+	&:checked {
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: em(6.6);
+			height: em(6.6);
+			border-radius: 50%;
+			background-color: currentColor;
+		}
+	}
+	&:disabled {
+		cursor: inherit;
+	}
+}

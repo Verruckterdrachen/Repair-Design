@@ -1,0 +1,31 @@
+.check {
+	--color: #000;
+	--colorDisabled: #999;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	color: var(--color);
+	&.check--disabled {
+		cursor: not-allowed;
+		--color: var(--colorDisabled);
+	}
+}
+.check__input {
+	cursor: pointer;
+	appearance: none;
+	width: em(12);
+	height: em(12);
+	margin-right: em(6);
+	color: inherit;
+	border: em(1.8) solid currentColor;
+	&:checked {
+		background-color: currentColor;
+		background-image: url("@img/icons/check.svg");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 80%;
+	}
+	&:disabled {
+		cursor: inherit;
+	}
+}
