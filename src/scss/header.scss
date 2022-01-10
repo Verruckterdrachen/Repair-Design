@@ -1,16 +1,177 @@
 //====================================================================================================
-
-//====================================================================================================
-
-//Burger
-/*
-.icon-menu {
+.header {
+	color: #fff;
+	background-color: $darkColor;
+	// .header__body
+	&__body {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: rem(5) 0;
+		min-height: rem(80);
+		transition: min-height 0.3s;
+		@media (max-width: $tablet) {
+			min-height: rem(60);
+		}
+	}
+	// .header__logo
+	&__logo {
+		@media (max-width: em(1199.98)) {
+			flex: 1 1 auto;
+		}
+	}
+	// .header__menu
+	&__menu {
+		@media (max-width: em(1199.98)) {
+			visibility: hidden;
+			position: fixed;
+			overflow: auto;
+			top: 0;
+			left: 100%;
+			width: 100%;
+			height: 100%;
+			padding: rem(100) rem(15) rem(30) rem(15);
+			background-color: $darkColor;
+			transition: left 0.3s, visibility 0.3s;
+			&::before {
+				content: "";
+				position: fixed;
+				top: 0;
+				left: 100%;
+				width: 100%;
+				height: rem(80);
+				background-color: $darkColor;
+				@media (max-width: $tablet) {
+					height: rem(60);
+				}
+			}
+			&._open {
+				left: 0;
+				visibility: visible;
+				&::before {
+					left: 0;
+				}
+			}
+		}
+		@media (max-width: em(599.98)) {
+			display: grid;
+			align-content: space-between;
+		}
+	}
+	// .header__actions
+	&__actions {
+		display: flex;
+		align-items: center;
+	}
+	// .header__phone
+	&__phone {
+		z-index: 5;
+		position: relative;
+		font-size: rem(14);
+		line-height: math.div(16, 14);
+		font-weight: 700;
+		white-space: nowrap;
+		transition: color 0.3s;
+		@media (min-width: em(1199.98)) {
+			color: $accentColor;
+			text-decoration: underline !important;
+			@media (any-hover: hover) {
+				&:hover {
+					text-decoration: none !important;
+				}
+			}
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				color: $accentColor;
+			}
+		}
+		@media (max-width: em(380)) {
+			display: none;
+		}
+	}
+	// .header__phone-icon
+	&__phone-icon {
+		display: none;
+		@media (max-width: em(380)) {
+			z-index: 5;
+			position: relative;
+			display: block;
+			color: $accentColor;
+			@media (any-hover: hover) {
+				&:hover {
+					color: #fff;
+				}
+			}
+		}
+	}
+	// .header__button
+	&__button {
+		z-index: 5;
+		position: relative;
+		padding: 0 rem(20);
+		min-height: rem(37);
+		border-radius: rem(2);
+		margin-left: rem(45);
+		@media (max-width: em(1199.98)) {
+			margin-left: rem(15);
+		}
+		@media (max-width: em(599.98)) {
+			font-size: rem(18);
+			min-height: rem(55);
+			margin-left: 0;
+		}
+	}
+}
+.menu {
+	// .menu__list
+	&__list {
+		text-align: center;
+		@media (min-width: em(1199.98)) {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+		}
+		@media (max-width: em(599.98)) {
+			margin-bottom: rem(40);
+		}
+	}
+	// .menu__item
+	&__item {
+		padding: rem(5) 0;
+		margin: 0 em(20, 14);
+		@media (max-width: em(1199.98)) {
+			&:not(:last-child) {
+				margin-bottom: em(30, 14);
+			}
+		}
+	}
+	// .menu__link
+	&__link {
+		font-size: rem(14);
+		line-height: math.div(15, 14);
+		text-transform: uppercase;
+		transition: color 0.3s;
+		@media (max-width: em(1199.98)) {
+			font-size: rem(20);
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				color: $accentColor;
+			}
+		}
+	}
+}
+.burger {
 	display: none;
-	@media (max-width: $mobile) {
+	@media (max-width: em(1199.98)) {
 		display: block;
 		position: relative;
-		width: 30px;
-		height: 18px;
+		flex: 0 0 rem(30);
+		width: rem(30);
+		height: rem(18);
+		margin-left: rem(15);
 		cursor: pointer;
 		z-index: 5;
 		span,
@@ -21,8 +182,8 @@
 			left: 0px;
 			position: absolute;
 			width: 100%;
-			height: 2px;
-			background-color: #000;
+			height: rem(2);
+			background-color: $accentColor;
 		}
 		&::before {
 			top: 0px;
@@ -31,21 +192,21 @@
 			bottom: 0px;
 		}
 		span {
-			top: calc(50% - 1px);
+			top: calc(50% - rem(1));
 		}
-		.menu-open & {
+		&._active {
 			span {
 				transform: scale(0);
 			}
 			&::before {
 				transform: rotate(-45deg);
-				top: calc(50% - 1px);
+				top: calc(50% - rem(1));
 			}
 			&::after {
 				transform: rotate(45deg);
-				bottom: calc(50% - 1px);
+				bottom: calc(50% - rem(1));
 			}
 		}
 	}
 }
-*/
+//====================================================================================================

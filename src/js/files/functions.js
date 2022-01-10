@@ -409,15 +409,57 @@ export function tabs() {
 }
 // Модуль работы с меню (бургер) =======================================================================================================================================================================================================================
 export function menuInit() {
-	let iconMenu = document.querySelector(".icon-menu");
-	if (iconMenu) {
-		iconMenu.addEventListener("click", function (e) {
-			if (bodyLockStatus) {
-				bodyLockToggle();
-				document.documentElement.classList.toggle("menu-open");
+	let focusElements = [
+		'a[href]',
+		'input:not([disabled]):not([type="hidden"]):not([aria-hidden])',
+		'button:not([disabled]):not([aria-hidden])',
+		'select:not([disabled]):not([aria-hidden])',
+		'textarea:not([disabled]):not([aria-hidden])',
+		'area[href]',
+		'iframe',
+		'object',
+		'embed',
+		'[contenteditable]',
+		'[tabindex]:not([tabindex^="-"])'
+	];
+	let burger = document.querySelector(".burger");
+	let menu = document.querySelector(".menu");
+	let menuElements = menu.querySelectorAll(focusElements);
+
+	burger.addEventListener("click", function (e) {
+		let expanded = "true" === burger.getAttribute("aria-expanded");
+		burgerInit(expanded);
+	});
+
+	document.addEventListener("keydown", function (e) {
+		if (burger.getAttribute("aria-expanded") === "true") {
+			if (e.code === 'Escape') {
+				burgerInit(true);
+				burger.focus();
+				e.preventDefault();
+				return;
 			}
-		});
-	};
+			if (e.shiftKey && e.code === 'Tab' || e.code === 'Tab') {
+				const menuLinks = Array.prototype.slice.call(menuElements);
+				menuLinks.push(burger);
+				const index = menuLinks.indexOf(e.target);
+				const direction = e.shiftKey && e.code === 'Tab' ? -1 : 1;
+				const length = menuLinks.length;
+				const newIndex = (index + length + direction) % length;
+				menuLinks[newIndex].focus();
+				e.preventDefault();
+			}
+
+		}
+	}.bind(this));
+
+	function burgerInit(expanded) {
+		burger.setAttribute("aria-expanded", !expanded),
+			expanded ? burger.setAttribute("aria-label", "Открыть меню") : burger.setAttribute("aria-label", "Закрыть меню"),
+			burger.classList.toggle("_active"),
+			menu.classList.toggle("_open"),
+			document.documentElement.classList.toggle("lock");
+	}
 }
 export function menuOpen() {
 	bodyLock();
