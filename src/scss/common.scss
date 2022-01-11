@@ -19,3 +19,39 @@
 	text-transform: uppercase;
 	letter-spacing: -0.07em;
 }
+.heading {
+	text-align: center;
+	// .heading__title
+	&__title {
+		font-family: "YesevaOne";
+		font-size: rem(20);
+		line-height: math.div(27, 20);
+		text-transform: uppercase;
+		margin-bottom: em(15, 20);
+	}
+	// .heading__icon
+	&__icon {
+		display: inline-flex;
+		align-items: center;
+		&::before,
+		&::after {
+			content: "";
+			display: inline-block;
+			width: rem(32);
+			height: rem(2);
+			background-color: $accentColor;
+			border-radius: rem(1);
+		}
+		&::before {
+			margin-right: rem(8);
+		}
+		&::after {
+			margin-left: rem(8);
+		}
+	}
+	&.heading--white {
+		.heading__title {
+			color: #fff;
+		}
+	}
+}

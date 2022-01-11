@@ -1,5 +1,46 @@
 .form {
 	display: grid;
+	&.form--black {
+		.form__button {
+			margin-left: 0;
+			@media (max-width: $mobileSmall) {
+				transform: translate(0, 50%);
+			}
+		}
+		.form__check {
+			margin-bottom: rem(55);
+		}
+		@media (min-width: $mobile) {
+			.form__body {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-bottom: rem(35);
+			}
+			.form__label span {
+				color: rgba($mainColor, 0.5);
+			}
+			.form__input::placeholder {
+				color: $mainColor;
+			}
+			.form__item {
+				border-bottom: 1px solid rgba($mainColor, 0.3);
+				&:not(:last-child) {
+					margin-bottom: 0;
+					margin-right: rem(45);
+				}
+			}
+			.form__button {
+				padding: 0 rem(60);
+				border-radius: rem(2);
+			}
+			.form__check {
+				color: $mainColor;
+				justify-content: center;
+				margin-bottom: 0;
+			}
+		}
+	}
 	// .form__body
 	&__body {
 		margin-bottom: rem(16);
@@ -31,6 +72,9 @@
 		background-color: transparent;
 		&::placeholder {
 			color: #fff;
+		}
+		@media (max-width: $mobile) {
+			font-size: rem(16);
 		}
 	}
 	// .form__check

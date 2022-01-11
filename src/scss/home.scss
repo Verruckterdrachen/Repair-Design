@@ -334,4 +334,102 @@
 	}
 }
 //========================================================================================
+.control {
+	@media (max-width: $mobile) {
+		color: #fff;
+		background-color: $darkColor;
+	}
+	// .control__container
+	&__container {
+	}
+	// .control__heading
+	&__heading {
+		margin-bottom: rem(30);
+	}
+	// .control__body
+	&__body {
+	}
+	// .control__video
+	&__video {
+		position: relative;
+		max-width: rem(817);
+		margin-left: auto;
+		margin-right: auto;
+		@include adaptiveValue("padding-bottom", 434, 207);
+		@include adaptiveValue("margin-bottom", 100, 50);
+		box-shadow: 0px 20px 50px 0px #00000026;
+		&::before {
+			z-index: 1;
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(#000, 0.8);
+		}
+		video {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		@media (max-width: $mobile) {
+			margin-left: rem(-15);
+			margin-right: rem(-15);
+		}
+	}
+	// .control__play
+	&__play {
+		z-index: 5;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		@include adaptiveValue("width", 85, 45);
+		@include adaptiveValue("height", 85, 45);
+		border-radius: 50%;
+		@include adaptiveValue("font-size", 21, 12);
+		color: #fff;
+		box-shadow: 0px 5px 30px 0px #e3b87333;
+		background-color: $accentColor;
+		transition: box-shadow 0.3s;
+		@media (any-hover: hover) {
+			&:hover {
+				box-shadow: none;
+			}
+		}
+	}
+	// .control__text
+	&__text {
+		text-align: center;
+		max-width: rem(571);
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+		@include adaptiveValue("font-size", 20, 14);
+		line-height: math.div(33, 20);
+		margin-bottom: em(55, 20);
+		&::before {
+			content: "";
+			position: absolute;
+			top: rem(-34);
+			left: 50%;
+			width: rem(55);
+			height: rem(2);
+			transform: translate(-50%, 0);
+			border-radius: rem(1);
+			background-color: $accentColor;
+		}
+		@media (max-width: $mobile) {
+			&::before {
+				content: "";
+				top: rem(-20);
+			}
+		}
+	}
+}
+//========================================================================================
 //========================================================================================

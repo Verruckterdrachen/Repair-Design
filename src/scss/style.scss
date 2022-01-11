@@ -85,7 +85,15 @@ body {
 	// .page__projects
 	&__projects {
 		@include adaptiveValue("padding-top", 176, 40);
-		@include adaptiveValue("padding-bottom", 690, 50);
+		padding-bottom: rem(415);
+	}
+	// .page__control
+	&__control {
+		margin-top: rem(-320);
+		margin-bottom: rem(83);
+		@media (min-width: $mobileSmall) {
+			@include adaptiveValue("padding-bottom", 140, 0);
+		}
 	}
 }
 

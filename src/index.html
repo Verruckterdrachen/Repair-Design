@@ -116,6 +116,42 @@
 					</div>
 				</div>
 			</section>
+			<section class="page__control control">
+				<div class="control__container">
+					<div class="control__heading heading heading--white">
+						<h2 class="heading__title">Онлайн контроль</h2>
+						<div class="heading__icon"><img src="@img/control/heading-icon.svg" alt="" aria-hidden="true"></div>
+					</div>
+					<div class="control__body">
+						<div class="control__video">
+							<video autoplay src="video/repair.mp4" poster="@img/control/video-poster.jpg"></video>
+							<button type="button" class="control__play _icon-play"></button>
+						</div>
+						<p class="control__text">На каждом объекте установлена ​​камера, которая транслирует ход работы на часах. В любой момент вы можете зайти на наш сайт и следить за ходом работы в вашей квартире. Посмотрите прямую трансляцию с одного из наших объектов! Оставьте заявку ниже чтобы получить ссылку на трансляцию.</p>
+						<form action="#" class="control__form form form--black">
+							<div class="form__body">
+								<div class="form__item">
+									<label class="form__label">
+										<span>Имя</span>
+										<input type="text" class="form__input" placeholder="Как вас зовут:">
+									</label>
+								</div>
+								<div class="form__item">
+									<label class="form__label">
+										<span>Телефон</span>
+										<input type="phone" class="form__input" placeholder="Ваш номер телефона:">
+									</label>
+								</div>
+								<button data-da=".control__form,767.98" class="button form__button button--accent">Отправить</button>
+							</div>
+							<label class="form__check check">
+								<input class="check__input" type="checkbox" checked>
+								Я соглашаюсь с обработкой данных
+							</label>
+						</form>
+					</div>
+				</div>
+			</section>
 		</main>
 		@@include('html/_footer.htm',{})
 	</div>
