@@ -87,12 +87,12 @@
 			}
 		}
 		&:last-child {
-			transition: border-color 0.3s, background-color 0.3s;
+			transition: color 0.3s, background-color 0.3s;
 			border: rem(1) solid #fff;
 			@media (any-hover: hover) {
 				&:hover {
-					border-color: $darkColor;
-					background-color: $darkColor;
+					color: $darkColor;
+					background-color: #fff;
 				}
 			}
 		}

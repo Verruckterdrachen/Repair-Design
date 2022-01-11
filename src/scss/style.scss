@@ -85,7 +85,7 @@ body {
 	// .page__projects
 	&__projects {
 		@include adaptiveValue("padding-top", 176, 40);
-		@include adaptiveValue("padding-bottom", 90, 50);
+		@include adaptiveValue("padding-bottom", 690, 50);
 	}
 }
 
