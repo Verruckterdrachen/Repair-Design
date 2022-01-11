@@ -1,5 +1,8 @@
 //====================================================================================================
 .header {
+	position: fixed;
+	width: 100%;
+	z-index: 50;
 	color: #fff;
 	background-color: $darkColor;
 	// .header__body

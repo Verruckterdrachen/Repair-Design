@@ -8,9 +8,25 @@
 	<div class="wrapper">
 		@@include('html/_header.htm',{})
 		<main class="page">
-			<div class="page__container">
-
-			</div>
+			<section class="page__hero hero">
+				<div class="hero__container">
+					<div class="hero__body">
+						<h1 class="hero__title">Турецкий ремонт в <span>Ростове-на-дону</span></h1>
+						<p class="hero__text">Получите готовый ремонт под ключ в срок с экономией рабочего времени до 45 дней и 20% от стоимости материалов за счет организации работы</p>
+						<div class="hero__actions">
+							<a href="#" class="hero__button button button--accent">Рассчитать стоимость</a>
+							<a href="#" class="hero__button button">Отправить заявку</a>
+						</div>
+					</div>
+				</div>
+				<div class="hero__left">
+					<a href="#" class="hero__instagram">Instagram</a>
+				</div>
+				<div class="hero__bottom">
+					<span id="arrow">Листайте вниз</span>
+					<button type="button" class="hero__arrow _icon-arrow-bottom" aria-labelledby="arrow"></button>
+				</div>
+			</section>
 		</main>
 		@@include('html/_footer.htm',{})
 	</div>

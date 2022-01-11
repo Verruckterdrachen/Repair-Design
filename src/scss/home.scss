@@ -1,3 +1,191 @@
-//====================================================================================================
-
-//====================================================================================================
+//========================================================================================
+.hero {
+	display: flex;
+	position: relative;
+	min-height: 100vh;
+	background-image: url("@img/hero/hero-cover.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	@media (max-width: $mobileSmall) {
+		min-height: rem(536);
+	}
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(#000, 0.7);
+	}
+	// .hero__container
+	&__container {
+		flex: 1 1 auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		@media (min-width: $mobile) {
+			margin-left: rem(105);
+			@media (min-width: $tablet) {
+				margin-left: rem(135);
+			}
+		}
+		@media (max-width: $mobileSmall) {
+			justify-content: flex-end;
+		}
+	}
+	// .hero__body
+	&__body {
+		z-index: 5;
+		position: relative;
+		padding-top: rem(100);
+		padding-bottom: rem(100);
+		color: #fff;
+		@media (max-width: $mobileSmall) {
+			padding-bottom: rem(60);
+		}
+	}
+	// .hero__title
+	&__title {
+		font-family: "YesevaOne";
+		@include adaptiveValue("font-size", 40, 24);
+		line-height: math.div(53, 40);
+		text-transform: uppercase;
+		margin-bottom: em(19, 40);
+		max-width: em(450, 40);
+		span {
+			color: $accentColor;
+		}
+	}
+	// .hero__text
+	&__text {
+		max-width: rem(504);
+		@include adaptiveValue("font-size", 22, 18);
+		line-height: math.div(29, 22);
+		margin-bottom: em(40, 22);
+	}
+	// .hero__actions
+	&__actions {
+		display: flex;
+		align-items: center;
+		@media (max-width: $mobileSmall) {
+			flex-wrap: wrap;
+		}
+	}
+	// .hero__button
+	&__button {
+		border-radius: rem(2);
+		padding: 0 rem(40);
+		min-height: rem(50);
+		&:first-child {
+			margin-right: rem(20);
+			padding: 0 rem(26);
+			@media (max-width: $mobileSmall) {
+				margin-bottom: rem(24);
+			}
+		}
+		&:last-child {
+			transition: border-color 0.3s, background-color 0.3s;
+			border: rem(1) solid #fff;
+			@media (any-hover: hover) {
+				&:hover {
+					border-color: $darkColor;
+					background-color: $darkColor;
+				}
+			}
+		}
+		@media (max-width: $mobileSmall) {
+			flex: 0 0 100%;
+			border-radius: 0;
+		}
+	}
+	// .hero__left
+	&__left {
+		z-index: 5;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: rem(90);
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: $accentColor;
+		background-color: $darkColor;
+		@media (max-width: $tablet) {
+			width: rem(60);
+		}
+		@media (max-width: $mobile) {
+			display: none;
+		}
+	}
+	// .hero__instagram
+	&__instagram {
+		position: relative;
+		font-size: rem(14);
+		line-height: math.div(16, 14);
+		text-transform: uppercase;
+		writing-mode: vertical-rl;
+		transition: color 0.3s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: #fff;
+				&::after {
+					background-color: #fff;
+				}
+			}
+		}
+		&::after {
+			content: "";
+			display: inline-block;
+			width: rem(2);
+			height: rem(50);
+			margin-top: rem(8);
+			background-color: $accentColor;
+			transition: background-color 0.3s;
+		}
+	}
+	// .hero__bottom
+	&__bottom {
+		z-index: 5;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: rem(247);
+		height: rem(97);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: rem(15);
+		color: #fff;
+		background-color: $darkColor;
+		span {
+			text-align: center;
+			font-family: "YesevaOne";
+			font-size: rem(12);
+			line-height: math.div(16, 12);
+			text-transform: uppercase;
+			margin-right: rem(12);
+		}
+		@media (max-width: $tablet) {
+			height: rem(80);
+		}
+		@media (max-width: $mobile) {
+			display: none;
+		}
+	}
+	// .hero__arrow
+	&__arrow {
+		flex: 0 0 rem(29);
+		width: rem(29);
+		height: rem(29);
+		color: $accentColor;
+		font-size: rem(10);
+		border-radius: 50%;
+		border: rem(2) solid $accentColor;
+	}
+}
+//========================================================================================
+//========================================================================================
