@@ -1,9 +1,35 @@
-<!-- <div id="popup" aria-hidden="true" class="popup">
+<div id="callback" aria-hidden="true" class="popup">
 	<div class="popup__wrapper">
 		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрыть</button>
-			<div class="popup__text">
-			</div>
+			<button data-close type="button" class="popup__close _icon-close" aria-label="Закрыть модальное окно"></button>
+			<h2 class="popup__title">Оставьте заявку и наш менеджер свяжется с вами </h2>
+			<form action="#" class="popup__form form">
+				<div class="form__body">
+					<div class="form__item">
+						<label class="form__label">
+							<span>Имя</span>
+							<input type="text" class="form__input" placeholder="Как вас зовут:">
+						</label>
+					</div>
+					<div class="form__item">
+						<label class="form__label">
+							<span>Телефон</span>
+							<input type="phone" class="form__input" placeholder="Ваш номер телефона:">
+						</label>
+					</div>
+					<div class="form__item">
+						<label class="form__label">
+							<input type="email" class="form__input" placeholder="Ваш email">
+							<span>Email</span>
+						</label>
+					</div>
+				</div>
+				<label class="form__check check">
+					<input class="check__input" type="checkbox" checked>
+					Я соглашаюсь с обработкой данных
+				</label>
+				<button class="button form__button button--accent">Отправить заявку</button>
+			</form>
 		</div>
 	</div>
-</div> -->
+</div>

@@ -422,9 +422,9 @@ export function menuInit() {
 		'[contenteditable]',
 		'[tabindex]:not([tabindex^="-"])'
 	];
+	let popup = document.querySelector(".popup");
 	let burger = document.querySelector(".burger");
 	let menu = document.querySelector(".menu");
-	let menuElements = menu.querySelectorAll(focusElements);
 
 	burger.addEventListener("click", function (e) {
 		let expanded = "true" === burger.getAttribute("aria-expanded");
@@ -432,24 +432,26 @@ export function menuInit() {
 	});
 
 	document.addEventListener("keydown", function (e) {
-		if (burger.getAttribute("aria-expanded") === "true") {
-			if (e.code === 'Escape') {
+		if (burger.getAttribute("aria-expanded") === "true" && popup.getAttribute("aria-hidden") === "true") {
+			if (e.which == 27) {
 				burgerInit(true);
 				burger.focus();
 				e.preventDefault();
 				return;
 			}
-			if (e.shiftKey && e.code === 'Tab' || e.code === 'Tab') {
-				const menuLinks = Array.prototype.slice.call(menuElements);
+			if (e.shiftKey && e.which == 9 || e.which == 9) {
+				let menuElements = document.querySelector(".menu").querySelectorAll(focusElements);
+				let menuLinks = Array.prototype.slice.call(menuElements);
 				menuLinks.push(burger);
-				const index = menuLinks.indexOf(e.target);
-				const direction = e.shiftKey && e.code === 'Tab' ? -1 : 1;
-				const length = menuLinks.length;
-				const newIndex = (index + length + direction) % length;
+
+				let index = menuLinks.indexOf(e.target);
+				let direction = e.shiftKey && e.which == 9 ? -1 : 1;
+				let length = menuLinks.length;
+				let newIndex = (index + length + direction) % length;
+
 				menuLinks[newIndex].focus();
 				e.preventDefault();
 			}
-
 		}
 	}.bind(this));
 

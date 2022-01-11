@@ -1,6 +1,55 @@
+.form {
+	display: grid;
+	// .form__body
+	&__body {
+		margin-bottom: rem(16);
+	}
+	// .form__item
+	&__item {
+		padding-bottom: rem(10);
+		border-bottom: 1px solid rgba(#fff, 0.15);
+		&:not(:last-child) {
+			margin-bottom: rem(45);
+		}
+	}
+	// .form__label
+	&__label {
+		display: grid;
+		span {
+			font-size: rem(15);
+			line-height: math.div(15, 20);
+			color: rgba(#fff, 0.5);
+			margin-bottom: em(7, 15);
+		}
+	}
+	// .form__input
+	&__input {
+		color: inherit;
+		font-weight: 700;
+		font-size: rem(18);
+		line-height: math.div(24, 18);
+		background-color: transparent;
+		&::placeholder {
+			color: #fff;
+		}
+	}
+	// .form__check
+	&__check {
+		margin-bottom: rem(38);
+	}
+	// .form__button
+	&__button {
+		padding: 0 rem(50);
+		min-height: rem(50);
+		@media (min-width: $mobileSmall) {
+			margin-left: auto;
+		}
+	}
+}
+
 @import "button";
 // @import "input";
-// @import "checkbox";
+@import "checkbox";
 // @import "radio";
 // @import "select";
 // @import "rating";
