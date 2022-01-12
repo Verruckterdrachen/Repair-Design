@@ -11,6 +11,7 @@
 		white-space: nowrap;
 	}
 }
+//========================================================================================
 .section-title {
 	font-family: "YesevaOne";
 	@include adaptiveValue("font-size", 27, 22);
@@ -19,6 +20,7 @@
 	text-transform: uppercase;
 	letter-spacing: -0.07em;
 }
+//========================================================================================
 .heading {
 	text-align: center;
 	// .heading__title
@@ -55,9 +57,10 @@
 		}
 	}
 }
+//========================================================================================
 .cards {
 	display: grid;
-	gap: rem(80);
+	gap: rem(70);
 	@media (min-width: em(700)) {
 		column-gap: rem(30);
 		grid-template-columns: repeat(3, 1fr);
@@ -65,9 +68,6 @@
 			row-gap: rem(60);
 			grid-template-columns: 1fr 1fr;
 		}
-	}
-	// .cards__item
-	&__item {
 	}
 }
 .item-card {
@@ -177,3 +177,4 @@
 		}
 	}
 }
+//========================================================================================

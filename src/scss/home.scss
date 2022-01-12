@@ -114,6 +114,7 @@
 		justify-content: center;
 		color: $accentColor;
 		background-color: $darkColor;
+		transition: width 0.3s;
 		@media (max-width: $tablet) {
 			width: rem(60);
 		}
@@ -161,6 +162,7 @@
 		padding: rem(15);
 		color: #fff;
 		background-color: $darkColor;
+		transition: height 0.3s;
 		span {
 			text-align: center;
 			font-family: "YesevaOne";
@@ -339,9 +341,6 @@
 		color: #fff;
 		background-color: $darkColor;
 	}
-	// .control__container
-	&__container {
-	}
 	// .control__heading
 	&__heading {
 		margin-bottom: rem(30);
@@ -395,10 +394,11 @@
 		color: #fff;
 		box-shadow: 0px 5px 30px 0px #e3b87333;
 		background-color: $accentColor;
-		transition: box-shadow 0.3s;
+		transition: box-shadow 0.3s, background-color 0.3s;
 		@media (any-hover: hover) {
 			&:hover {
 				box-shadow: none;
+				background-color: rgba($accentColor, 0.8);
 			}
 		}
 	}
@@ -433,15 +433,153 @@
 }
 //========================================================================================
 .repair {
-	// .repair__container
-	&__container {
-	}
 	// .repair__heading
 	&__heading {
 		margin-bottom: rem(30);
 	}
-	// .repair__body
+}
+//========================================================================================
+.features {
+	@media (max-width: $mobile) {
+		display: none;
+	}
+	// .features__body
 	&__body {
+		display: flex;
+		align-items: flex-end;
+		justify-content: flex-end;
+		padding-right: rem(15);
+		@media (min-width: $pc) {
+			margin-right: calc((100% - 1236px) / 2);
+		}
+	}
+	// .features__content
+	&__content {
+		@include adaptiveValue("margin-right", 130, 40);
+	}
+}
+.content-features {
+	position: relative;
+	&::after {
+		z-index: 5;
+		content: "";
+		position: absolute;
+		top: rem(55);
+		left: rem(-42);
+		width: 100%;
+		height: rem(636);
+		background-image: url("@img/features/circle.svg");
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	// .content-features__list
+	&__list {
+		counter-reset: item;
+	}
+	// .content-features__item
+	&__item {
+		display: flex;
+		align-items: center;
+		&:before {
+			counter-increment: item;
+			content: counter(item, decimal-leading-zero);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex: 0 0 rem(40);
+			width: rem(40);
+			height: rem(40);
+			border-radius: 50%;
+			margin-right: em(17, 18);
+			font-family: "YesevaOne";
+			font-size: rem(18);
+			line-height: math.div(24, 18);
+			color: #fff;
+			background-color: $accentColor;
+		}
+		position: absolute;
+		&:nth-child(1) {
+			top: rem(118);
+			right: rem(-69);
+			max-width: rem(418);
+		}
+		&:nth-child(2) {
+			top: rem(230);
+			right: rem(71);
+			max-width: rem(210);
+		}
+		&:nth-child(3) {
+			bottom: rem(216);
+			right: rem(-9);
+			max-width: rem(266);
+		}
+		&:nth-child(4) {
+			bottom: rem(53);
+			right: rem(-36);
+			max-width: rem(355);
+		}
+	}
+	// .content-features__text
+	&__text {
+		font-size: rem(18);
+		line-height: math.div(20, 18);
+		font-weight: 700;
+	}
+}
+.callback-features {
+	flex-shrink: 0;
+	flex-grow: 0;
+	flex-basis: rem(506);
+	@media (max-width: $pc) {
+		flex-basis: percent(506, 1236);
+	}
+	// .callback-features__modal
+	&__modal {
+		@include adaptiveValue("padding-top", 25, 15);
+		@include adaptiveValue("padding-right", 50, 20);
+		@include adaptiveValue("padding-bottom", 25, 15);
+		@include adaptiveValue("padding-left", 50, 20);
+		background-color: $darkColor;
+		margin-bottom: rem(38);
+		box-shadow: 0px 30px 30px 0px #0000000d;
+	}
+	// .callback-features__title
+	&__title {
+		max-width: rem(297);
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		font-size: rem(20);
+		font-weight: 700;
+		line-height: math.div(24, 20);
+		margin-bottom: em(35, 20);
+		color: #fff;
+	}
+	// .callback-features__saving
+	&__saving {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	// .callback-features__icon
+	&__icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex: 0 0 rem(72);
+		width: rem(72);
+		height: rem(72);
+		border-radius: 50%;
+		background-color: $accentColor;
+		box-shadow: 0px 10px 20px 0px #edc07833;
+		margin-right: rem(25);
+	}
+	// .callback-features__info
+	&__info {
+		font-size: rem(20);
+		line-height: math.div(24, 20);
+		font-weight: 700;
+		color: $accentColor;
 	}
 }
 //========================================================================================

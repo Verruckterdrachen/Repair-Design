@@ -97,7 +97,11 @@ body {
 	}
 	// .page__repair
 	&__repair {
-		@include adaptiveValue("padding-bottom", 200, 50);
+		@include adaptiveValue("padding-bottom", 200, 80);
+	}
+	// .page__features
+	&__features {
+		@include adaptiveValue("padding-bottom", 320, 50);
 	}
 }
 
