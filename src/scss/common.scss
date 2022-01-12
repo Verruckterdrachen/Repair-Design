@@ -55,3 +55,125 @@
 		}
 	}
 }
+.cards {
+	display: grid;
+	gap: rem(80);
+	@media (min-width: em(700)) {
+		column-gap: rem(30);
+		grid-template-columns: repeat(3, 1fr);
+		@media (max-width: $tablet) {
+			row-gap: rem(60);
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+	// .cards__item
+	&__item {
+	}
+}
+.item-card {
+	display: flex;
+	flex-direction: column;
+	@media (min-width: em(700)) {
+		@media (max-width: $tablet) {
+			&:last-child {
+				grid-column: span 2;
+				.item-card__image {
+					padding-bottom: rem(360);
+				}
+				.item-card__body {
+					margin-top: rem(-130);
+				}
+			}
+		}
+	}
+	// .item-card__image
+	&__image {
+		padding-bottom: percent(421, 392);
+	}
+	// .item-card__body
+	&__body {
+		flex: 1 1 auto;
+		z-index: 5;
+		position: relative;
+		margin-top: rem(-100);
+		margin-right: rem(70);
+		padding: rem(20) rem(30) rem(40) rem(30);
+		background-color: #fff;
+		box-shadow: 10px 10px 20px 0px #00000008;
+		@media (min-width: rem(700)) {
+			margin-top: percent(-130, 392);
+			margin-right: 0;
+			@include adaptiveValue("padding-top", 25, 15);
+			@include adaptiveValue("padding-left", 35, 15);
+			@include adaptiveValue("padding-right", 35, 15);
+			@include adaptiveValue("padding-bottom", 56, 15);
+			@media (min-width: $tablet) {
+				@include adaptiveValue("margin-right", 30, 0);
+				@include adaptiveValue("margin-left", 30, 0);
+			}
+		}
+		@media (max-width: $mobileSmall) {
+			margin-right: 0;
+		}
+	}
+	// .item-card__title
+	&__title {
+		font-family: "YesevaOne";
+		font-size: rem(18);
+		line-height: math.div(24, 18);
+		margin-bottom: em(10, 18);
+	}
+	// .item-card__list
+	&__list {
+	}
+	// .item-card__li
+	&__li {
+		display: flex;
+		align-items: center;
+		position: relative;
+		font-size: rem(15);
+		line-height: math.div(25, 15);
+		color: $grayColor;
+		&::before {
+			content: "";
+			flex: 0 0 rem(4);
+			width: rem(4);
+			height: rem(4);
+			border-radius: 50%;
+			background-color: $grayColor;
+			margin-right: rem(7);
+		}
+		&:not(:last-child) {
+			margin-bottom: em(3, 15);
+		}
+	}
+	// .item-card__price
+	&__price {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: rem(54);
+		padding: 0 rem(35);
+		transform: translate(0, 50%);
+		color: #fff;
+		background-color: $accentColor;
+		box-shadow: 5px 5px 10px 0px #e3b8734d;
+		font-family: "YesevaOne";
+		font-size: rem(18);
+		line-height: math.div(24, 18);
+		text-transform: uppercase;
+		span {
+			display: flex;
+			align-items: flex-start;
+		}
+		sup {
+			font-size: rem(12);
+		}
+		@media (max-width: $mobileSmall) {
+			width: 100%;
+		}
+	}
+}
