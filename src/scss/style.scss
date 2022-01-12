@@ -101,7 +101,11 @@ body {
 	}
 	// .page__features
 	&__features {
-		@include adaptiveValue("padding-bottom", 320, 50);
+		@include adaptiveValue("padding-bottom", 320, 80);
+	}
+	// .page__styles
+	&__styles {
+		@include adaptiveValue("margin-bottom", 150, 50);
 	}
 }
 
