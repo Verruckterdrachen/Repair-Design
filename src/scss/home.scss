@@ -998,5 +998,107 @@
 	}
 }
 //========================================================================================
+.clients {
+	@media (max-width: $mobile) {
+		display: none;
+	}
+	// .clients__heading
+	&__heading {
+		margin-bottom: rem(50);
+		.heading__text {
+			max-width: rem(360);
+		}
+	}
+	// .clients__body
+	&__body {
+		display: grid;
+		@include adaptiveValue("column-gap", 55, 0);
+		row-gap: rem(60);
+		@media (min-width: $tablet) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+}
+.item-clients {
+	display: grid;
+	position: relative;
+	padding: rem(20) rem(40) rem(70) rem(20);
+	box-shadow: 0px 10px 50px 0px #0000000a;
+	@media (max-width: $tablet) {
+		&:nth-child(3) {
+			grid-column: span 2;
+		}
+	}
+	// .item-clients__heading
+	&__heading {
+		display: flex;
+		align-items: center;
+		margin-bottom: rem(20);
+	}
+	// .item-clients__avatar
+	&__avatar {
+		overflow: hidden;
+		flex: 0 0 rem(75);
+		width: rem(75);
+		height: rem(75);
+		border-radius: 50%;
+		margin-right: rem(18);
+	}
+	// .item-clients__name
+	&__name {
+		font-family: "YesevaOne";
+		font-size: rem(18);
+		line-height: math.div(22, 18);
+		color: $darkColor;
+	}
+	// .item-clients__text
+	&__text {
+		font-size: rem(15);
+		line-height: math.div(27, 15);
+		color: $grayColor;
+	}
+	// .item-clients__footer
+	&__footer {
+		max-width: 100%;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		transform: translate(0, 50%);
+		display: flex;
+		flex-wrap: wrap;
+		background-color: $accentColor;
+		box-shadow: 5px 5px 20px 0px #e3b87380;
+	}
+	// .item-clients__cell
+	&__cell {
+		display: flex;
+		align-items: center;
+		padding: rem(10) rem(15);
+		&:first-child {
+			border-right: rem(1) solid #fff;
+		}
+	}
+	// .item-clients__icon
+	&__icon {
+		margin-right: rem(15);
+		@media (max-width: em(1100)) {
+			display: none;
+		}
+	}
+	// .item-clients__info
+	&__info {
+		display: flex;
+		align-items: flex-start;
+		color: #fff;
+		font-family: "YesevaOne";
+		font-size: rem(17);
+		line-height: math.div(23, 17);
+		span {
+			padding-left: rem(5);
+			text-transform: uppercase;
+		}
+	}
+}
+//========================================================================================
 
 //========================================================================================
