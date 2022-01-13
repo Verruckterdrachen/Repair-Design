@@ -1,4 +1,64 @@
 <footer class="footer">
 	<div class="footer__container">
+		<div class="footer__modal">
+			<h2 class="footer__title">Остались вопросы?</h2>
+			<form action="#" class="footer__form form form-footer">
+				<div class="form__body form-footer__body">
+					<div class="form__item form-footer__item">
+						<label class="form__label">
+							<span>Имя</span>
+							<input type="text" class="form__input" placeholder="Как вас зовут:">
+						</label>
+					</div>
+					<div class="form__item form-footer__item">
+						<label class="form__label">
+							<span>Телефон</span>
+							<input type="phone" class="form__input" placeholder="Ваш номер телефона:">
+						</label>
+					</div>
+					<div class="form__item form-footer__item">
+						<label class="form__label">
+							<span>Вопрос</span>
+							<textarea class="form__input" rows="1" placeholder="Я хочу спросить:"></textarea>
+						</label>
+					</div>
+				</div>
+				<label class="form__check check form-footer__check">
+					<input class="check__input" type="checkbox" checked>
+					Я соглашаюсь с обработкой данных
+				</label>
+				<button class="button form__button form-footer__button button--accent">Отправить</button>
+			</form>
+		</div>
+		<div class="footer__contacts" id="contacts">
+			<div>Ростов на дону, Торговый центр Plaza</div>
+			<div>Прямой телефон <a href="tel:+79997683299">+7 (999) 768 32 99</a></div>
+			<div class="footer__icons">
+				<a href="#" class="footer__icon _icon-email" aria-label="Email"></a>
+				<a href="#" class="footer__icon _icon-instagram" aria-label="Instagram"></a>
+			</div>
+		</div>
+		<div id="map" class="footer__map"></div>
+	</div>
+	<div class="footer__bottom">
+		<div class="footer__container-bottom">
+			<div class="footer__logo logo">
+				<a href="#" class="logo__text">Repair Design Project</a>
+			</div>
+			<nav class="footer__menu menu">
+				<ul class="menu__list">
+					<li class="menu__item"><a href="#" class="menu__link">Главная</a></li>
+					<li class="menu__item"><a href="#" class="menu__link">Проекты</a></li>
+					<li class="menu__item"><a href="#" class="menu__link">Замер</a></li>
+					<li class="menu__item"><a href="#" class="menu__link">Команда</a></li>
+					<li class="menu__item"><a href="#" class="menu__link">Отзывы</a></li>
+					<li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
+				</ul>
+			</nav>
+			<div class="footer__actions">
+				<a href="tel:+79997683299" class="footer__phone">+7 (999) 768-32-99</a>
+				<button data-popup="#callback" class="footer__button button button--accent">Заказать звонок</button>
+			</div>
+		</div>
 	</div>
 </footer>

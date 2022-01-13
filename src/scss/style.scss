@@ -67,7 +67,6 @@ body {
 	min-height: 100%;
 	display: flex;
 	flex-direction: column;
-	overflow: hidden;
 	// Прижимаем footer
 	> main {
 		flex: 1 1 auto;
@@ -125,17 +124,19 @@ body {
 	// .page__steps
 	&__steps {
 		padding-top: rem(560);
-		padding-bottom: rem(500);
+		padding-bottom: rem(460);
 	}
 	// .page__team
 	&__team {
-		@include adaptiveValue("padding-bottom", 100, 130);
+		padding-top: rem(40);
+		padding-bottom: rem(70);
 		@media (min-width: $mobile) {
 			margin-top: rem(-400);
 		}
 	}
 	// .page__clients
 	&__clients {
+		padding-top: rem(40);
 		padding-bottom: rem(380);
 	}
 }

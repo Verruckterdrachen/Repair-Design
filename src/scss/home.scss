@@ -849,9 +849,6 @@
 .team {
 	@media (max-width: $mobile) {
 		background-color: $darkColor;
-		@media (min-width: $mobileSmall) {
-			padding-top: rem(50);
-		}
 	}
 	// .team__container
 	&__container {

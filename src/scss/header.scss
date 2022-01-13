@@ -129,6 +129,7 @@
 .menu {
 	// .menu__list
 	&__list {
+		color: #fff;
 		text-align: center;
 		@media (min-width: em(1199.98)) {
 			display: flex;
