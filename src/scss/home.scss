@@ -739,3 +739,21 @@
 	}
 }
 //========================================================================================
+.design {
+	// .design__heading
+	&__heading {
+		margin-bottom: rem(40);
+		.heading__icon {
+			margin-bottom: rem(23);
+		}
+	}
+	// .design__body
+	&__body {
+		@media (min-width: $tablet) {
+			.item-card__body {
+				flex: 0 0 auto;
+			}
+		}
+	}
+}
+//========================================================================================
