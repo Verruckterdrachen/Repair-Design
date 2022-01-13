@@ -106,9 +106,26 @@ body {
 	// .page__styles
 	&__styles {
 		@include adaptiveValue("margin-bottom", 150, 50);
+		@media (max-width: $mobileSmall) {
+			margin-bottom: rem(-110);
+		}
 	}
 	// .page__design
 	&__design {
+		@media (min-width: $mobile) {
+			margin-bottom: rem(-472);
+		}
+		@media (max-width: $mobile) {
+			padding-bottom: rem(100);
+		}
+		@media (max-width: $mobileSmall) {
+			padding-top: rem(170);
+		}
+	}
+	// .page__steps
+	&__steps {
+		padding-top: rem(560);
+		@include adaptiveValue("padding-bottom", 500, 50);
 	}
 }
 
