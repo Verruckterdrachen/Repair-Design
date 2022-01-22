@@ -1,7 +1,7 @@
 // Подключение функционала "Чертогов Фрилансера"
-import { isMobile } from "./functions.js";
+// import { isMobile } from "./functions.js";
 // Подключение списка активных модулей
-import { flsModules } from "./modules.js";
+// import { flsModules } from "./modules.js";
 
 let center = [47.24483840526133, 39.72360365302512];
 let zoom = 17;
